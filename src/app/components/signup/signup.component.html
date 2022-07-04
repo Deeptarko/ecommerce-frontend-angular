@@ -1,0 +1,75 @@
+<div class="container mt-5 w-75">
+  <form (ngSubmit)="onSubmit(signUpForm)" #signUpForm="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="name"
+        required
+        ngModel
+        #name="ngModel"
+      />
+      <span *ngIf="name.touched && !name .valid">Enter a valid name</span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="username"
+        #username="ngModel"
+        required
+        ngModel
+      />
+    </div>
+    <span class="mb-3" *ngIf="username.touched && !username .valid">Enter a valid name</span>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" ngModel required />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Address</label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        name="address"
+        required
+        ngModel
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Country</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="country"
+        required
+        ngModel
+      />
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          name="phoneNumber"
+          required
+          ngModel
+        />
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">Submit</button>
+  </form>
+</div>
