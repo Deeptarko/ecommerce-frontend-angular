@@ -18,13 +18,13 @@ export class JwtInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     const user = this.authenticationService.userValue;
     const isLoggedIn = user && user.token;
-    
-    if (isLoggedIn || true) {
+
+    if (isLoggedIn) {
       console.log('Intercepting Request');
       request = request.clone({
         setHeaders: {
-          // Authorization: `${user.token}`,
-          Authorization:`Testing Purpose`
+          Authorization: `${user.token}`,
+          //TODO: Authorization:`Testing Purpose`
         },
       });
     }

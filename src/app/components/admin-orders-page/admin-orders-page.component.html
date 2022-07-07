@@ -1,0 +1,23 @@
+<h1 class="text-center m-5">Orders</h1>
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">Amount</th>
+      <th scope="col">Order Date</th>
+      <th scope="col">Order Id</th>
+      <th scope="col">Order Status</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Shipping Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of ordersArr">
+      <td>{{order.amount}}</td>
+      <td>{{order.orderDate}}</td>
+      <td>{{order.orderId}}</td>
+      <td>{{order.orderStatus}}</td>
+      <td>{{order.quantity}}</td>
+      <td>{{order.shippingAddress}}</td>
+    </tr>
+  </tbody>
+</table>

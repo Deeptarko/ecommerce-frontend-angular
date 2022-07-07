@@ -35,27 +35,16 @@ export class AuthenticationService {
           localStorage.setItem('user', JSON.stringify(user));
           this.userSubject.next(user);
           return user;
-         
         })
       );
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem('user');
     // this.userSubject.next(null);
     this.router.navigate(['/login']);
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 // {
 //   "username":"deep6104",
