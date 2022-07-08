@@ -1,4 +1,4 @@
-class OrderRequest{
+export class OrderRequest{
     amount:number;
     shippingAddress:string;
     orderStatus:string;
